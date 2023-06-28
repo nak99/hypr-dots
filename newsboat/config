@@ -1,0 +1,12 @@
+include ~/.config/newsboat/dark
+auto-reload yes
+reload-time 180
+reload-threads 4
+highlight feedlist "---.*---" cyan default bold
+highlight feedlist ".*0/0.." cyan default invis
+
+macro b set browser "brave %u" ; open-in-browser ; set browser "elinks %u"
+macro t set browser "transmission-remote -a %u" ; open-in-browser ; set browser "elinks %u"
+macro v set browser "mpv %u" ; open-in-browser ; set browser "elinks %u"
+
+

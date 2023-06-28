@@ -1,0 +1,122 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "modules-left": ["wlr/workspaces", "mpd"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "idle_inhibitor",
+        "pulseaudio",
+        "backlight",
+        "memory",
+        "cpu",
+        "battery",
+        "network",
+        "tray"
+    ],
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1.  ",
+            "2": "2.  ",
+            "3": "3.  ",
+            "4": "4.  ",
+            "5": "5.  ",
+            "6": "6.  ",
+            "urgent": ""
+          },
+          "sort-by-number": true
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip": false,
+        "format": "{icon}  {volume}%",
+        "format-muted": "  Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%I:%M:%S %p | %A %b %d}",
+        "tooltip": true,
+        "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>"
+    },
+    "mpd": {
+        "max-length": 50,
+        "format": "   {title}",
+        "format-paused": " {title}",
+        "format-stopped": "",
+        "format-disconnected": "",
+        "on-click": "mpc --quiet toggle",
+        "on-click-right": "foot ncmpcpp",
+        "smooth-scrolling-threshold": 5,
+        "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
+    },
+    "memory": {
+        "interval": 1,
+        "format": "  {percentage}%",
+        "states": {
+            "warning": 85
+        },
+        "on-click": "foot btop"
+    },
+    "backlight": {
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", ""],
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "  {usage}%",
+        "states": {
+            "warning": 85
+        },
+        "on-click": "foot btop"
+    },
+    "battery": {
+        "interval": 5,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["  ", "  ", "  ", "  ", "  "]
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "network": {
+        "interval": 5,
+        "tooltip-format": "{bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  {ifname} ({ipaddr})",
+        "format-linked": "說  {essid} (No IP)",
+        "format-disconnected": "說  Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5
+    }
+}

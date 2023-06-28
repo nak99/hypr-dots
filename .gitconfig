@@ -1,0 +1,7 @@
+[user]
+	name = zathura99
+	email = 128263015+zathura99@users.noreply.github.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
