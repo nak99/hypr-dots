@@ -88,11 +88,7 @@ $reboot)
 	run_cmd --reboot
 	;;
 $lock)
-	if [[ -x '/usr/bin/betterlockscreen' ]]; then
-		betterlockscreen -l
-	elif [[ -x '/usr/local/bin/wl-lock' ]]; then
-		wl-lock
-	fi
+	wl-lock
 	;;
 $suspend)
 	run_cmd --suspend
